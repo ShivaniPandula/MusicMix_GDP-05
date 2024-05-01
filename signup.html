@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
         }
+
         .container {
             max-width: 400px;
             margin: 100px auto;
@@ -17,6 +19,7 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         input[type="text"],
         input[type="password"],
         input[type="submit"] {
@@ -28,25 +31,31 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
+
         input[type="submit"] {
             background-color: #1db954;
             color: white;
             border: none;
             cursor: pointer;
         }
+
         input[type="submit"]:hover {
             background-color: #128c3e;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h2>Sign In to MusicMix</h2>
         <form action="your_signin_script.php" method="post">
             <label for="email">Email:</label>
             <input type="text" id="email" name="email" placeholder="Enter your email" required>
-            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
         </form>
     </div>
 </body>
+
 </html>
