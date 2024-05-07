@@ -48,10 +48,11 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    display:- bold;
 }
 
 button:hover {
-    background-color: red;
+    background-color: green;
 }
 
 .signup-link {
