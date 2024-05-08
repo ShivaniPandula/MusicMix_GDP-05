@@ -67,4 +67,7 @@ button:hover {
 
 .signup-link a:hover {
     text-decoration: underline;
+    text-align: center;
+    color:- black;
+    
 }
