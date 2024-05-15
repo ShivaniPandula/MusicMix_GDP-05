@@ -6,6 +6,4 @@ MusicMix is a music streaming and discovery application that offers users.
 access to a vast library of songs, playlists, and curated radio stations.
 Creating a personalized playlists, share music with friends, and follow favorite artists.
 Provide the genere on songs and ratings.
-One of the key features of music streaming is personalized recommendations where algorithms analyze user's listening habits to suggest new music they might enjoy. Additionally, users can download music for offline listening, ensuring they can enjoy their favorite tracks even without an internet connection
-### List of Proposed Prototypes:
-By understanding Basic user requirements like  Screens for input validation and error handling during registration.
+One of the key features of music streaming is personalized recommendations where algorithms analyze user's listening habits to suggest new music they might enjoy. Additionally, users can download music for offline listening, ensuring they can enjoy their favorite tracks even without an internet connection.
