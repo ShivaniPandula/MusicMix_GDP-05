@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <!-- CSS Links -->
+    <!-- Login css -->
+    <link rel="stylesheet" href="./css/login.css">
+    <!-- Popup css -->
+    <link rel="stylesheet" href="./css/popup.css">
+    <!-- Notifications css -->
+    <link rel="stylesheet" href="./css/notifications.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+</head>
+<body>
+    <!-- Notifications -->
+    <section id="toast" class="info">
+        <div id="icon-wrapper">
+          <div id="icon"></div>
+        </div>
+        <div id="toast-message">
+          <h4>Update</h4>
+          <p></p>
+        </div>
+        <button id="toast-close"></button>
+        <div id="timer"></div>
+    </section>
+    <!-- End of notifications -->
+
+    <div class="container">
+        <div class="login-box">
+            <h1>Signup</h1>
+            <form id="signupForm">
+                <div class="img">
+                    <img id="imgbg" name="profile" src="./img/music-player-for-android-logo.png" onclick="document.getElementById('fileInput').click()">
+                    <input id="fileInput" name="image" type="file" style="display:none;" onchange="changeimg()" />
+                </div>
+                <div class="textbox">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="textbox">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="textbox">
+                    <label for="dob">Date Of Birth</label>
+                    <input type="date" id="dob" name="dob" placeholder="Enter your Date Of Birth" required>
+                </div>
+                <div class="textbox">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="Enter your Address" required>
+                </div>
+                <div class="textbox">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="textbox">
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" id="password2" name="password2" placeholder="Enter your password again" required>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <button type="submit" class="btn">Register</button>
+                </div>
+                <a href="login.html" class="forgot">Already have an account? Login Here</a>
+            </form>
+        </div>
+    </div>
+    <div id="verifyMail" class="popup">
+        <div class="popup-content">
+            <span class="close" id="closePopup" style="font-size: 24px; font-weight: bolder;" onclick="document.getElementById('verifyMail').style.display = 'none'">&times;</span>
+            <h1 style="text-align: center; margin-bottom: 20px;">Verify Mail</h1>
+            <form id="checkOTP">
+                <label for="OTP">Enter OTP:</label>
+                <input type="number" name="OTP" id="OTP" minlength="6" maxlength="6" required>
+                <div style="display: flex; justify-content: center;">
+                    <button class="btn verify" id="btn" type="submit">Verify</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Notifications script -->
+    <script src="./script/notifications.js"></script>
+    <script src="./script/signup.js"></script>
+</body>
+</html>

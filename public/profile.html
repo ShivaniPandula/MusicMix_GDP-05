@@ -1,0 +1,135 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/profile.css">
+    <!-- Notifications css -->
+    <link rel="stylesheet" href="./css/notifications.css">
+    <script src="./script/auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+    
+    .change-image-btn {
+        margin-top: 10px;
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .text-data {
+        margin-top: 10px;
+    }
+
+    .buttons {
+        margin-top: 10px;
+    }
+
+    .edit-btn, .save-btn {
+        padding: 5px 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .edit-btn {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .save-btn {
+        background-color: #2196F3;
+        color: white;
+    }
+    .editable {
+        width: 300px !important;
+        overflow-x:auto;
+        background-color: rgba(190, 221, 209, 0.71);
+        outline: 2px dashed rgba(47, 119, 212, 0.6); /* Optional outline for better visibility */
+    }
+
+    </style>
+    <script src="./script/auth.js"></script>
+</head>
+<body>
+     <!-- Notifications -->
+     <section id="toast" class="info">
+        <div id="icon-wrapper">
+          <div id="icon"></div>
+        </div>
+        <div id="toast-message">
+          <h4>Update</h4>
+          <p></p>
+        </div>
+        <button id="toast-close"></button>
+        <div id="timer"></div>
+    </section>
+    <!-- End of notifications -->
+    <section style="display: block; position: absolute; top: 10% !important;">
+        <div><h1 style="display: block; text-align: center; color: rgb(0, 0, 0) !important; font-size: 30px; font-weight: bold; text-transform: uppercase;">Profile Page</h1></div>
+    </section>
+    <section class="profile-card">
+        
+        <div class="image">
+            <img id="profileUrl" src="https://res.cloudinary.com/duxjuijhb/image/upload/v1725990604/music-mix/vqzqsloqiwgwpya2euks.png" alt="user image">
+            <input type="file" id="imageInput" accept="image/*" hidden>
+        </div>
+        <div class="text-data">
+            <table>
+                <tbody>
+                    <tr>
+                        <td >Name</td>
+                        <td>:</td>
+                        <td id="name">ImDezCode</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>:</td>
+                        <td id="email">srinadh@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>:</td>
+                        <td id="address">Missouri</td>
+                    </tr>
+                    <tr>
+                        <td>DOB</td>
+                        <td>:</td>
+                        <td id="dob">20/10/1993</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="buttons">
+            <button id="editButton" class="edit-btn">Edit</button>
+            <button id="saveButton" class="save-btn" hidden>Save</button>
+        </div>
+        <div class="analytics">
+            <div class="data">
+                <i class="fa-solid fa-heart"></i>
+                <p>30 Fav</p>
+            </div>
+            <div class="data">
+                <i class="fa-regular fa-comment"></i>
+                <p>10 Playlists</p>
+            </div>
+        </div>
+        <div class="media-icons" hidden>
+            <a href="#" style="background-color: #ff0000;">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="#" style="background-color: #1da1f2;">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" style="background-color: #4267b2;">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#" style="background-color: #e13062;">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+    </section>
+    
+    <script src="./script/profile.js"></script>
+    <script src="./script/notifications.js"></script>
+</body>

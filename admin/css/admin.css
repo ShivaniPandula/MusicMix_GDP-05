@@ -1,0 +1,307 @@
+
+    
+    body {
+        font-family: 'Roboto', sans-serif;
+        min-height: 100vh;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 12px;
+        background: #373737;
+    }
+    body a {
+        color: #aaa;
+    }
+    body a:hover {
+        color: #c8c8c8;
+    }
+
+    .home{
+        min-height: calc(100vh - 250px);
+    }
+    .home-container {
+        max-width: calc(100vw - 250px);
+        margin: 20px auto;
+        border: 1px solid rgb(154 154 154 / 58%);
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    }
+
+    .home-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .search-bar {
+        flex-grow: 1;
+        margin-right: 10px;
+        font-size: 16px;
+    }
+
+    .add-button {
+        color: rgb(0, 0, 0);
+        border: none;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .add-button span {
+        transition: transform 0.5s ease; 
+    }
+    .add-button:hover span {
+        transform: rotate(135deg);
+        display: inline-block;
+    }
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+        
+    }
+
+    .table th, .table td {
+        border: 1px solid #ddddddae;
+        border-radius: 3px;
+        padding: 8px;
+        font-size: 18px;
+        text-align: center;
+    }
+    .table tr:hover {
+        color: #000000;
+        font-weight: 500;
+        background-color: #ddddddae;
+    }
+    .table th {
+        background-color: rgba(128, 227, 245, 0.879);
+        color: rgb(0, 0, 0);
+        text-align: center;
+    }
+    .edit-button{
+        background-color: #e6e6e6e7; 
+        color: #0074E4; 
+        padding: 4px 8px; 
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    .edit-button:hover {
+        color: #000;
+        font-size: 18px;
+        font-weight: bolder;
+        border: 1px #000 solid;
+    }
+    .add-button {
+        background-color: #0074E4; 
+        color: #ffffff; 
+        padding: 4px 16px; 
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    .add-button:hover {
+        background-color: #0057a8; 
+    }
+
+
+    .delete-button {
+        background-color: #ff000096; 
+        color: #ffffff; 
+        padding: 4px 16px; 
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    .delete-button:hover {
+        background-color: #cc0000; 
+    }
+
+    .section-heading h2 {
+        line-height: 40px;
+        margin-top: 0px;
+        margin-bottom: 50px; 
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(26, 24, 24, 0.15);
+        font-size: 22px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #141414;
+    }
+
+ 
+
+    input,textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    #addSongForm label, #addUserForm label{
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .img img {
+        border-radius: 50%;
+        margin-bottom: 10px;
+        max-width: 100px;
+        height: auto;
+    }
+  .img {
+        display: flex;
+        justify-content: center !important;
+    }
+
+    /* Flexbox styling for Artist and Year inputs */
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .form-group {
+        flex: 1;
+        margin-right: 10px;
+    }
+
+    .form-group:last-child {
+        margin-right: 0;
+    }
+
+    .btn{
+        cursor: pointer;
+        position: relative;
+        padding: 10px 25px !important;
+        font-size: 18px;
+        
+        border-radius:8px;
+        color: rgb(0, 0, 0);
+        border: 2px solid;
+        transition: width 0.5s;
+        margin-top: 20px;
+    }
+
+        
+    .process{
+        width:300px;
+        box-shadow: 
+            0px 1px 10px #15fd15,
+            0px 2px 15px #f50909,
+            0px 3px 20px #0909ef,
+            -1px 1px 25px #00ff00,
+            -1px 2px 30px #ff0000,
+            -1px 3px 35px #0000ff;
+    }
+
+    .process::before {
+        content: ' ';
+        position: absolute;
+        background-color: #3ef4ba;
+        background-image: linear-gradient(315deg, #34ebb1 0%, #12f28d 74%);
+        height: 100%;
+        top: 0;
+        left: 0;
+        width: 0%;
+        animation: processing 5s;
+        border-radius: 4px;
+        z-index: -1;
+    }
+    @keyframes processing{
+        0%{
+            width: 0%;
+        }
+        25%{
+            width: 25%;
+        }
+        50%{
+            width: 50%;
+        }
+        75%{
+            width: 75%;
+        }
+        100%{
+            width: 100%;
+        }
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        color: #cc0000;
+    }
+    #mySidenav.active{
+    width:250px;
+    }
+    #main {
+        transition: margin-left .5s;
+        padding: 16px;
+    }
+    body.active{
+        left: 10px;
+        transition: all 0.5s ease;
+    }
+    body{
+        transition: all 0.3s ease;
+        left: 0;overflow-x: hidden;
+        position: relative;
+    }
+
+    @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    }
+
+    .sidebarbtn{
+        font-size:30px;
+        cursor:pointer;
+        background-color: #369af7;
+        padding: 10px 15px;
+        margin: 5px 0 0 20px !important;
+        position: absolute;
+        border-radius: 12px;
+    }
