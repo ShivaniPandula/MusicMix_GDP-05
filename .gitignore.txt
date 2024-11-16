@@ -1,0 +1,2 @@
+# Ignore Google Cloud service account credentials
+src/configs/serviceAccountKey.json
