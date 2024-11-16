@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="Music Mix">
+    <meta name="description" content="Music mix is a best music streaming platform.">
+    <meta name='copyright' content=''>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Title -->
+    <title>Music Mix</title>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/gif;base64,R0lGODlhEAAQAPL/AC80ODY7QEJJT0pQV11kayktMAAAACImKSH/C05FVFNDQVBFMi4wAwEAAAAh+QQJCgAIACwAAAAAEAAQAAAENBDJSatFJt/N6/nTd3RXYYanZBakBbwoELdeEMyqTVNCP/WCn28nGRiFAySxSCBMmk6mMwIAIfkECQoABgAsAAAFAA8ACwAAAyNouqz1LTJAFwW2Shl6Dt/GCYJFmqXYDOzCDm6rMkTt2kpNJAAh+QQFCgAFACwAAAcADwAJAAADHwha3K3AyRnqs6yGybMQF+iJnTSczTmkaGkSRArLRAIAOw==">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    
+      <!-- Popup css -->
+    <link rel="stylesheet" href="./css/popup.css">
+    <!-- Notifications css -->
+    <link rel="stylesheet" href="./css/notifications.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="./css/admin.css">
+   
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsmediatags@latest/dist/jsmediatags.min.js"></script>
+    <script src="./scripts/auth.js"></script>
+
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="#" class="closebtn">&times;</a>
+        <a href="index.html">Dashboard</a>
+        <a href="users-manage.html">Users Manage</a>
+        <a href="chat.html">Chat</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+      <span class="sidebarbtn" >&#9776;</span>
+     <!-- Notifications -->
+     <section id="toast" class="info">
+        <div id="icon-wrapper">
+          <div id="icon"></div>
+        </div>
+        <div id="toast-message">
+          <h4>Update</h4>
+          <p></p>
+        </div>
+        <button id="toast-close"></button>
+        <div id="timer"></div>
+    </section>
+    <!-- End of notifications -->
+    <h1 style="text-align: center;">Admin Panel - Dashboard</h1>
+    <div class="home-container">
+        <div class="section-heading" style="margin-top: 30px;">
+          <h2>Manage Music</h2>
+        </div>
+        <div class="home-header">
+          <div class="search-bar">
+           
+          </div>
+          <button class="add-button" onclick="document.getElementById('addSongPopup').style.display = 'block'">Add <span>&#43;</span></button>
+        </div>
+    
+        <table class="table" id="tableContainer">
+          <thead>
+            <tr>
+              <th>Music Name</th>
+              <th>Album</th>
+              <th>Year</th>
+              <th>Artist</th>
+              <th>Lyrics</th>
+              <th>Actions</th>
+              
+            </tr>
+          </thead>
+          <tbody id="songsTable">
+            <tr>
+                <td>Fear Song</td>
+                <td>Devara</td>
+                <td>2024</td>
+                <td>Anirudh</td>
+                <td>Yes</td>
+                <td>
+                    <button class="edit-button" disabled><ion-icon name="pencil-sharp"></ion-icon></button>
+                    <button class="delete-button" disabled><ion-icon name="trash"></ion-icon></button>
+                </td>
+            </tr>
+            <tr>
+                <td>Chutamalle Song</td>
+                <td>Devara</td>
+                <td>2024</td>
+                <td>Shilpa Rao</td>
+                <td>Yes</td>
+                <td>
+                    <button class="edit-button" disabled><ion-icon name="pencil-sharp"></ion-icon></button>
+                    <button class="delete-button" disabled><ion-icon name="trash"></ion-icon></button>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+      
+      <div id="addSongPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="closePopup" onclick="document.getElementById('addSongPopup').style.display = 'none'"><b>&times;</b></span>
+            <h3 style="text-align: center; margin-bottom: 20px;">ADD SONG</h3>
+            <form id="addSongForm">
+                <div class="img">
+                    <img id="imgbg" src="https://images.sftcdn.net/images/t_app-icon-m/p/4e70d3fe-9b4a-11e6-92c9-00163ec9f5fa/1979196806/music-player-for-android-logo" onclick="document.getElementById('fileInput').click()">
+                    <input id="fileInput" name="image" type="file" style="display:none;" onchange="changeimg()" />
+                </div>
+                <label for="name">Music Name:</label>
+                <input type="text" name="name" id="name" required>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="album">Album :</label>
+                        <input id="album" name="album" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duration :</label>
+                        <input id="duration" name="duration" type="text" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="artist">Artist :</label>
+                        <input type="text" name="artist" id="artist" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year :</label>
+                        <input id="year" name="year" type="number" required>
+                    </div>
+                </div>
+                <label for="genre">Genre :</label>
+                <input style="text-transform: capitalize;" id="genre" name="genre" type="text" required>
+                <label for="file">Music File:</label>
+                <input type="file" name="file" id="file" accept=".mp3" required onchange="extractMetadata()" />
+                <label for="lyrics">Lyrics :</label>
+                <textarea id="lyrics" name="lyrics" type="text" required> </textarea>
+                <div style="display: flex; justify-content: center;">
+                    <button class="btn" id="btn" type="submit">Upload</button>
+                </div>
+            </form>
+        </div>
+      </div>
+
+      <div id="editSongPopup" class="popup">
+
+      </div>
+       <!-- Notifications script -->
+    <script src="./scripts/notifications.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./scripts/toggleSidebar.js"></script>
+    <script src="./scripts/logout.js"></script>
+    <script src="./scripts/getSongs.js"></script>
+    <script>
+
+        var imageBlob, duration;
+        const file = document.getElementById('fileInput');
+        const imgContainer = document.getElementById('imgbg');
+        function changeimg() {
+            
+            if (file.files.length > 0) {
+                const selectedImage = file.files[0];
+                const objectURL = URL.createObjectURL(selectedImage);
+                imgContainer.src = objectURL;
+
+                if (imgContainer.src.startsWith('blob:')) {
+                            fetch(imgContainer.src)
+                                .then(response => response.blob())
+                                .then(blob => {
+                                    imageBlob = blob;
+                                    console.log({ file: imageBlob, type: imageBlob.type });
+                                })
+                                .catch(error => console.error('Failed to fetch blob image:', error));
+                } else {
+                            console.log('No valid image metadata or blob URL found.');
+                }
+            }
+        }
+        
+        function extractMetadata() {
+            const fileInput = document.getElementById('file');
+            const file = fileInput.files[0];
+            const audio = new Audio();
+            audio.src = URL.createObjectURL(file);
+
+            // When metadata is loaded, get the duration
+            audio.addEventListener('loadedmetadata', function() {
+                const timer = audio.duration;
+                duration = `${Math.floor(timer / 60)}:${Math.floor(timer % 60)}`
+                document.getElementById('duration').value = duration
+            });
+
+            jsmediatags.read(file, {
+                onSuccess: function(tag) {
+                    const tags = tag.tags;
+                    console.log(tags)
+                    tags.title ? document.getElementById('name').value = tags.title : 0
+                    tags.album ? document.getElementById('album').value = tags.album : 0
+                    tags.artist ? document.getElementById('artist').value = tags.artist : 0
+                    tags.year ? document.getElementById('year').value = tags.year : 0
+                    
+                    if (tags.picture) {
+                        const image = tags.picture;
+                        const base64String = arrayBufferToBase64(image.data);
+                        const imgUrl = `data:${image.format};base64,${base64String}`;
+                        document.getElementById('imgbg').src = imgUrl;
+                        imageBlob = base64ToBlob(base64String, image.format);
+                    } else {
+                        console.log('No valid image metadata or blob URL found.');
+                    }
+                },
+                onError: function(error) {
+                    console.error('Error extracting metadata:', error.type, error.info);
+                }
+            });
+        
+            function arrayBufferToBase64(buffer) {
+                let binary = '';
+                const bytes = new Uint8Array(buffer);
+                const len = bytes.byteLength;
+                for (let i = 0; i < len; i++) {
+                    binary += String.fromCharCode(bytes[i]);
+                }
+                return window.btoa(binary);
+            }
+
+            function base64ToBlob(base64, type) {
+                const binary = atob(base64);
+                const array = [];
+                for (let i = 0; i < binary.length; i++) {
+                    array.push(binary.charCodeAt(i));
+                }
+                return new Blob([new Uint8Array(array)], { type: type });
+            }
+        }
+
+        document.getElementById('addSongForm').addEventListener('submit', async function(e) {
+            e.preventDefault(); // Prevent form submission
+
+            let btn = document.getElementById('btn');
+            btn.setAttribute('class', 'process');
+            btn.innerHTML = 'Processing';
+
+            console.log(imageBlob)
+            // Create a FormData object to send the files and metadata
+            const formData = new FormData();
+
+
+            const songFile = document.getElementById('file').files[0];
+            const imgFile = document.getElementById('fileInput').files[0];
+            const songName = document.getElementById('name').value;
+            const albumName = document.getElementById('album').value;
+            const artistName = document.getElementById('artist').value;
+            const year = document.getElementById('year').value;
+            const lyrics = document.getElementById('lyrics').value;
+            const duration = document.getElementById('duration').value;
+            const genre = document.getElementById('genre').value;
+
+            formData.append('song', songFile);
+            formData.append('name', songName);
+            formData.append('album', albumName);
+            formData.append('artist', artistName);
+            formData.append('duration',duration);
+            formData.append('year', year);
+            formData.append('lyrics', lyrics);
+            formData.append('genre', genre);
+            formData.append('image', imageBlob, `${songName}.png`);
+            
+           
+            const formDataObject = {};
+            formData.forEach((value, key) => {
+               formDataObject[key] = value;
+            });
+            // console.log(formData)
+            const response = await axios.post('/admin/api/addSong', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    },
+              });
+            //console.log(response);
+            console.log(response);
+                    if(response.data){
+                        // Simulate a delay for the animation
+                        setTimeout(() => {
+                            btn.setAttribute('class', 'btn');
+                            btn.innerHTML = 'Uploaded';
+                        }, 5000);
+
+                        document.getElementById('addSongPopup').style.display = 'none'
+                        // Handle success (you can reset the form or show a success message here)
+                        console.log('Success:');
+                        getSongs();
+                    }
+                    else {
+                        console.error('Error');
+                        // Handle error
+                        btn.setAttribute('class', 'btn');
+                        btn.innerHTML = 'Upload';
+                        alert('An error occurred while uploading the Music.');
+                    }; 
+        });
+    </script>
+
+</body>
+</html>
