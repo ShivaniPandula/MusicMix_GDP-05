@@ -12,7 +12,7 @@ jest.mock('../src/mails/email.js');
 
 
 describe('likeSong', () => {
-    it('should add a song to liked songs if not already liked', async () => {
+    it('should add a song to liked music if not already liked', async () => {
         const req = {
             query: {
                 user: 'testuser@example.com',
@@ -36,7 +36,7 @@ describe('likeSong', () => {
         expect(res.send).toHaveBeenCalled();
     });
 
-    it('should remove a song from liked songs if already liked', async () => {
+    it('should remove a song from liked music if already liked', async () => {
         const req = {
             query: {
                 user: 'testuser@example.com',
@@ -58,7 +58,7 @@ describe('likeSong', () => {
 
         expect(res.status).toHaveBeenCalledWith(200);
         expect(res.send).toHaveBeenCalled();
-    });
+    }); 
 
    /*  it('should return 404 if user not found', async () => {
         const req = {
@@ -83,7 +83,7 @@ describe('likeSong', () => {
 });
 
 describe('getLikes', () => {
-    it('should return the list of liked songs for the user', async () => {
+    it('should return the list of liked music for the user', async () => {
         const req = {
             query: {
                 user: 'testuser@example.com',

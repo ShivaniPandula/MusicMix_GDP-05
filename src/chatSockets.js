@@ -14,8 +14,8 @@ const socket = (io) => {
                         username: username,
                         isActive: isActive,
                         id: socket.id,
-                        role: role
-                    }); 
+                        role: role 
+                    });
                     console.log("New user reg -> ", newUser)
                     await newUser.save();
                     if(role == "user"){
@@ -35,6 +35,7 @@ const socket = (io) => {
            // console.log(`users -> ${JSON.stringify(users)}`);
           });
           socket.on('connectAdmin', async(client) => {
+            console.log("Connect admin triggered ")
             try{
                 const user = await Chats.find({ role: "admin", isActive: true });
                 console.log(user)
@@ -45,7 +46,8 @@ const socket = (io) => {
                 console.log(err)
             }
         });
-        socket.on('connectClient', async(admin,client,) => {
+        socket.on('connectClient', async(admin,client) => {
+            console.log("Connect client triggered")
             try{
                 const user = await Chats.findOne({ username: client });;
                 console.log(user)
@@ -60,7 +62,8 @@ const socket = (io) => {
                 console.log(err)
             }
         });
-        socket.on('cancelClientConnect', async(admin,client,) => {
+       /* socket.on('cancelClientConnect', async(admin,client) => {
+            console.log("Cancel client connected triggered")
             try{
                 const user = await Chats.findOne({ username: client });;
                 console.log(user)
@@ -71,7 +74,7 @@ const socket = (io) => {
             } catch (err){
                 console.log(err)
             }
-        })
+        }) */
         socket.on('new to user', async(to) => {
             try {
                 if(to){
@@ -140,7 +143,7 @@ const socket = (io) => {
             }
         })  */
 
-        socket.on('disconnect', async() => {
+      /*  socket.on('disconnect', async() => {
           //  console.log(socket.id," discoonnected")
             try {
                 const disconnectedUser = await Chats.findOne({ id: socket.id });
@@ -154,7 +157,7 @@ const socket = (io) => {
                 console.error('Error -> ', err);
             }
             
-        });
+        }); */
     });
 };
 

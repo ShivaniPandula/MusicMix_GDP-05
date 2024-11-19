@@ -147,9 +147,6 @@ socket.on('stop typing', (msg) => {
     chatStatus.innerText = ""
 })
 
-socket.on('clear', (msg) => {
-    window.localStorage.clear();
-})
 
 adminSendChatBtn.addEventListener("click", adminhandleChat);
 adminCloseBtn.addEventListener("click", () => {

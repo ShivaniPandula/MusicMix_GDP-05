@@ -57,7 +57,7 @@ describe('Playlist Functions', () => {
 
     // Test for updatePlaylist function
     describe('updatePlaylist function', () => {
-        test('should update playlist with new song successfully', async () => {
+        test('should update playlist with new music successfully', async () => {
             req.body = { playlistName: 'My Playlist', owner: 'user1', song: 'songId123' };
             playlistModel.updateOne = jest.fn().mockResolvedValueOnce({ modifiedCount: 1 });
 
@@ -130,7 +130,7 @@ describe('Playlist Functions', () => {
 
     // Test for deleteSongInPlaylist function
     describe('deleteSongInPlaylist function', () => {
-        test('should delete song from playlist successfully', async () => {
+        test('should delete music from playlist successfully', async () => {
             req.query = { playlist: 'My Playlist', owner: 'user1', songId: 'songId123' };
             playlistModel.updateOne = jest.fn().mockResolvedValueOnce({ modifiedCount: 1 });
 

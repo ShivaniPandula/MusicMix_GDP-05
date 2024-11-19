@@ -19,9 +19,9 @@ username = adminName //prompt("Enter username to chat")
 } else {
     //document.body.classList.toggle("show-chatbot");
     if(username){
-        socket.emit('new user', username.trim(), isActive,"admin", "admin");
+        socket.emit('new user', username.trim(), isActive,"admin");
     } else {
-        socket.emit('new user', username.trim(), isActive,"admin" , "admin");
+        socket.emit('new user', username.trim(), isActive,"admin");
     }
     
 }
@@ -119,16 +119,10 @@ socket.on('isUserActive', (bol) => {
 
 socket.on('newClient', (msg)=> {
   if(msg){
-    let confirmed = confirm(`Accept ${msg}'s chat?`)
-    if(confirmed){
         user.innerText = msg.toUpperCase()
         to = msg.trim()
         window.sessionStorage.setItem('to',msg.trim());
         socket.emit('connectClient', adminName, msg);
-    } else {
-        socket.emit('cancelClientConnect', adminName, msg)
-    }
-    
   }
 })
 
@@ -136,9 +130,6 @@ socket.on('stop typing', (msg) => {
     chatStatus.innerText = ""
 })
 
-socket.on('clear', (msg) => {
-    window.sessionStorage.clear();
-})
 
 sendChatBtn.addEventListener("click", handleChat);
 

@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     <img src="${song.imgUrl}" alt="Cover art for '${song.name}'" />
                 </div>
                 <div class="track__number">
-                    <a href="/public/api/download?url=${encodeURIComponent(song.songUrl)}&filename=${encodeURIComponent(song.name)}" target="_blank" download="${song.name}" title="Download ${song.name}">
+                    <a href="${song.songUrl}" target="_blank" download="${song.name}" title="Download ${song.name}">
                         <ion-icon class="ico-style" name="checkmark-circle"></ion-icon>
                     </a>
                 </div>
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                       <img src="${song.imgUrl}" alt="Cover art for '${song.name}'" />
                   </div>
                   <div class="track__number">
-                      <a href="/public/api/download?url=${encodeURIComponent(song.songUrl)}&filename=${encodeURIComponent(song.name)}" download="${song.name}" target="_blank" title="Download ${song.name}">
+                      <a href="${song.songUrl}" download="${song.name}" target="_blank" title="Download ${song.name}">
                           <ion-icon class="ico-style" name="checkmark-circle"></ion-icon>
                       </a>
                   </div>
