@@ -4,8 +4,8 @@ const resetForm = document.getElementById('resetPassForm')
 
 form.addEventListener('submit', async(e) => {
     e.preventDefault();
-    openToast('info', 'Signup Form Submitted')
-    console.log("Signup Form submitted");
+  //  openToast('info', 'Signup Form Submitted')
+    console.log("Login Form submitted");
     // Get form data
     const formData = new FormData(e.target);
     const formDataObject = {};
