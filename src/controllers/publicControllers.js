@@ -131,7 +131,9 @@ const resetPasswordRequest = async(req,res) => {
         const token=jwt.sign(payload,secret,{expiresIn:'30m'})
         //console.log(token);
         const encrypt = btoa(`id=${user.id}&token=${token}`)
-        const link=`http://${process.env.IP}:${process.env.PORT || 4040}/resetpassword.html?${encrypt}`
+       // const link=`http://${process.env.IP}:${process.env.PORT || 4040}/resetpassword.html?${encrypt}`
+        const baseUrl = process.env.BASE_URL || http://localhost:${process.env.PORT || 8080};
+        const link = ${baseUrl}/resetpassword.html?${encrypt};
       // //  console.log(link);
         await Emails.sendResetLink(email,link)
         res.status(200).send({success:"Password reset link sent to mail id"})
